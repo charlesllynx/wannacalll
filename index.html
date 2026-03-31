@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wanna call?</title>
+
+<style>
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ffc0cb,#ffe4e1,#ffd1dc);
+font-family:Arial;
+overflow:hidden;
+}
+
+.container{
+text-align:center;
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+width:80%;
+max-width:350px;
+}
+
+h1{
+color:#ff4d88;
+font-size:28px;
+margin-bottom:20px;
+}
+
+img{
+width:120px;
+margin-bottom:15px;
+}
+
+button{
+padding:12px 25px;
+font-size:16px;
+border:none;
+border-radius:25px;
+margin:10px;
+cursor:pointer;
+}
+
+#yes{
+background:#ff4d88;
+color:white;
+}
+
+#no{
+background:#999;
+color:white;
+position:absolute;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<img src="https://media.tenor.com/0AVbKGY_MxMAAAAC/bear-love.gif">
+<h1>Wanna call?</h1>
+<button id="yes">Yes</button>
+<button id="no">No</button>
+</div>
+
+<script>
+const no=document.getElementById("no")
+const yes=document.getElementById("yes")
+
+function moveButton(){
+let x=Math.random()*(window.innerWidth-100)
+let y=Math.random()*(window.innerHeight-50)
+no.style.left=x+"px"
+no.style.top=y+"px"
+}
+
+no.addEventListener("touchstart",moveButton)
+no.addEventListener("mouseover",moveButton)
+
+yes.onclick=function(){
+document.body.innerHTML="<h1 style='color:#ff4d88;text-align:center;margin-top:40vh;font-family:Arial'>Yay! Let's call 📞❤️</h1>"
+}
+</script>
+
+</body>
+</html>
